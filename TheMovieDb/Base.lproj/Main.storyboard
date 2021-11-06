@@ -21,27 +21,35 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="111" id="W0D-Bu-vJI" customClass="CustomTableViewCell" customModule="TheMovieDb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="111"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customCell" rowHeight="150" id="W0D-Bu-vJI" customClass="CustomTableViewCell" customModule="TheMovieDb" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W0D-Bu-vJI" id="31u-Op-4b5">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOV-PN-auy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-7W-Vr0">
-                                                            <rect key="frame" x="110" y="33" width="162" height="45"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-7W-Vr0">
+                                                            <rect key="frame" x="362" y="4" width="48" height="142"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-Qb-lr8">
+                                                            <rect key="frame" x="4" y="4" width="150" height="142"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="9s9-7W-Vr0" firstAttribute="centerY" secondItem="xOV-PN-auy" secondAttribute="centerY" id="CXU-UG-kiz"/>
-                                                        <constraint firstItem="9s9-7W-Vr0" firstAttribute="centerX" secondItem="xOV-PN-auy" secondAttribute="centerX" id="P4W-1Q-7R3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9s9-7W-Vr0" secondAttribute="trailing" constant="4" id="0Da-MF-ude"/>
+                                                        <constraint firstItem="9s9-7W-Vr0" firstAttribute="leading" secondItem="Iu1-Qb-lr8" secondAttribute="trailing" constant="16" id="9RZ-ie-Fk1"/>
+                                                        <constraint firstItem="Iu1-Qb-lr8" firstAttribute="leading" secondItem="xOV-PN-auy" secondAttribute="leading" constant="4" id="9SM-zU-XXc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Iu1-Qb-lr8" secondAttribute="bottom" constant="4" id="C9S-XN-BNp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9s9-7W-Vr0" secondAttribute="bottom" constant="4" id="b6u-4b-cMZ"/>
+                                                        <constraint firstItem="Iu1-Qb-lr8" firstAttribute="top" secondItem="xOV-PN-auy" secondAttribute="top" constant="4" id="rIK-2N-g0G"/>
+                                                        <constraint firstItem="9s9-7W-Vr0" firstAttribute="top" secondItem="xOV-PN-auy" secondAttribute="top" constant="4" id="rfu-yy-5rR"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -53,6 +61,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="posterImageView" destination="Iu1-Qb-lr8" id="yNQ-fz-ikh"/>
                                             <outlet property="titleLabel" destination="9s9-7W-Vr0" id="Ogc-js-Qym"/>
                                         </connections>
                                     </tableViewCell>
