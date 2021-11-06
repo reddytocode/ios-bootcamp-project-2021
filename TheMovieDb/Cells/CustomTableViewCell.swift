@@ -8,7 +8,8 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    static let identifier = "CustomTableViewCell"
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
@@ -19,6 +20,7 @@ class CustomTableViewCell: UITableViewCell {
             self.titleLabel.text = movie.title
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

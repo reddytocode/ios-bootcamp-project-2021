@@ -39,21 +39,17 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = self.moviesTableView.dequeueReusableCell(withIdentifier: "customCell") as? CustomTableViewCell {
+        if let cell = self.moviesTableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell {
             let movie = self.movies[indexPath.row]
             cell.movie = movie
             return cell
         }
         return UITableViewCell()
-        
     }
+    
 }
