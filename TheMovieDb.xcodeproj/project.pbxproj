@@ -135,6 +135,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 837B4ECE258178BA003DFC67 /* Build configuration list for PBXNativeTarget "TheMovieDb" */;
 			buildPhases = (
+				C184D60B27361E980065B456 /* Run SwiftLint */,
 				837B4EA0258178B6003DFC67 /* Sources */,
 				837B4EA1258178B6003DFC67 /* Frameworks */,
 				837B4EA2258178B6003DFC67 /* Resources */,
@@ -252,6 +253,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C184D60B27361E980065B456 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		837B4EA0258178B6003DFC67 /* Sources */ = {
