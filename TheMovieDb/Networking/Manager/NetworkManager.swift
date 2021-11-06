@@ -8,11 +8,11 @@
 import Foundation
 
 struct NetworkManager {
-    static let environment : NetworkEnvironment = .production
+    static let environment: NetworkEnvironment = .production
     static let MovieAPIKey = "f6cd5c1a9e6c6b965fdcab0fa6ddd38a"
     private let router = Router<MovieApi>()
     
-    func getNewMovies(page: Int, completion: @escaping (_ movie: [Movie]?,_ error: String?)->()){
+    func getNewMovies(page: Int, completion: @escaping (_ movie: [Movie]?, _ error: String?) -> Void) {
             router.request(.newMovies(page: page)) { data, response, error in
                 
                 if error != nil {
@@ -32,8 +32,8 @@ struct NetworkManager {
                             let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                             print(jsonData)
                             let apiResponse = try JSONDecoder().decode(MovieApiResponse.self, from: responseData)
-                            completion(apiResponse.movies,nil)
-                        }catch {
+                            completion(apiResponse.movies, nil)
+                        } catch {
                             print(error)
                             completion(nil, NetworkResponse.unableToDecode.rawValue)
                         }
@@ -44,7 +44,7 @@ struct NetworkManager {
             }
         }
     
-    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
+    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299: return .success
         default: return.failure(NetworkResponse.failed.rawValue)
@@ -67,6 +67,3 @@ enum Result<String> {
     case success
     case failure(String)
 }
-
-
-

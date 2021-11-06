@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     
@@ -74,7 +73,6 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             }
         } catch { throw error}
     }
-    
     
     fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }

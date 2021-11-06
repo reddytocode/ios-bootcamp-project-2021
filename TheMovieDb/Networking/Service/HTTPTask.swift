@@ -7,23 +7,19 @@
 
 import Foundation
 
-
 public enum HTTPTask {
     case request
     case requestParameters(bodyParameters: Parameters?, urlParameters: Parameters?)
     case requestParametersAndHeaders(bodyParamenters: Parameters?, urlParameters: Parameters?, additionalHeaders: HTTPHeaders?)
 }
 
-public typealias HTTPHeaders = [String:String]
+public typealias HTTPHeaders = [String: String]
 
-
-public typealias Parameters = [String:Any]
-
+public typealias Parameters = [String: Any]
 
 public protocol ParameterEncoder {
     static func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws
 }
-
 
 public enum NetworkError: String, Error {
     case parametersNil = "Parameters were nil."

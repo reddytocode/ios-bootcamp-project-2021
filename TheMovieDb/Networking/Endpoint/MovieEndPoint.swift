@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum NetworkEnvironment {
     case qa
     case production
@@ -15,15 +14,15 @@ enum NetworkEnvironment {
 }
 
 public enum MovieApi {
-    case recommended(id:Int)
-    case popular(page:Int)
-    case newMovies(page:Int)
-    case video(id:Int)
+    case recommended(id: Int)
+    case popular(page: Int)
+    case newMovies(page: Int)
+    case video(id: Int)
 }
 
 extension MovieApi: EndPointType {
     
-    var environmentBaseURL : String {
+    var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production: return "https://api.themoviedb.org/3/movie/"
         case .qa: return "https://qa.themoviedb.org/3/movie/"
@@ -57,8 +56,8 @@ extension MovieApi: EndPointType {
         switch self {
         case .newMovies(let page):
             return .requestParameters(bodyParameters: nil,
-                                      urlParameters: ["page":page,
-                                                      "api_key":NetworkManager.MovieAPIKey])
+                                      urlParameters: ["page": page,
+                                                      "api_key": NetworkManager.MovieAPIKey])
         default:
             return .request
         }
