@@ -9,9 +9,18 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+//    let window = UIWindow(frame: UIScreen.main.bounds)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        guard let rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as? ViewController else {
+//            fatalError("unable to instantiate Root View Controller")
+//        }
+//
+//        rootViewController.networkManager = NetworkManager()
+//        window.rootViewController = rootViewController
+//        window.makeKeyAndVisible()
         return true
     }
 

@@ -11,7 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var moviesTableView: UITableView!
     var movies: [Movie] = []
-
+    
+    var networkManager: NetworkManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         moviesTableView.delegate = self
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
         let group: DispatchGroup = DispatchGroup()
         
         group.enter()
-        NetworkManager().getNewMovies(page: 1) {
+        networkManager?.getNewMovies(page: 1) {
             movies, _ in
             if movies?.count ?? 0 > 1 {
                 self.movies = movies!
